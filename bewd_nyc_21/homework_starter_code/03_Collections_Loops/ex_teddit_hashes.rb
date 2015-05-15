@@ -4,19 +4,21 @@
 # Complete the application below. 
 # Where you see comments (lines that begin with #) replace it with code so that the program works.
 
-def get_input
-  #Get input from the user.
-end
+# def get_input
+#   #Get input from the user.
+# end
 
-def calculate_upvotes(story, category)
-	# Write code so that:
-		# If the Story is about cats multiply the upvotes by 5
-		# If the Story is about bacon multiply the upvotes by 8
-		# If the Story is about Food it gets 3 times the upvotes.
+# def calculate_upvotes(story, category)
+# 	# Write code so that:
+# 		# If the Story is about cats multiply the upvotes by 5
+# 		# If the Story is about bacon multiply the upvotes by 8
+# 		# If the Story is about Food it gets 3 times the upvotes.
 
-	#For example:
-	# "Cats frolic despite tuna shortage" should give you 5 times the upvotes!
-end
+# 	#For example:
+# 	# "Cats frolic despite tuna shortage" should give you 5 times the upvotes!
+# end
+
+stories = []
 
 puts "Welcome to Teddit! a text based news aggregator. Get today's news tomorrow!"
 puts "Please enter a News story:"
@@ -24,8 +26,11 @@ story = get_input
 puts "Please give it a category:"
 category = get_input
 upvotes = calculate_upvotes(story, category)
-puts "New story added! #{story}, Category: #{category.capitalize}, Current Upvotes: #{upvotes}" 
-
+new_story = {title: story, category: category, upvotes: upvotes}
+stories.push(new_story)
+stories.each do |story|
+	puts "New story added! #{story[:title]}, Category: #{story[:category].capitalize}, Current Upvotes: #{story[:upvotes]}" 
+end
 # Step 2
 # Create an empty stories array. This will be used to hold all stories we capture.
 # Users enter the story as they do now, but it gets put in a hash instead. 

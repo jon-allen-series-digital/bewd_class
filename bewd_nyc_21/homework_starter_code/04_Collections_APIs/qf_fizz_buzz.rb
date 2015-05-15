@@ -10,9 +10,15 @@ end
 
 # Your code here
 def fizzbuzz(number)
-	result = "#{number % 3 == 0 ? "Fizz" : ""}#{number % 5 == 0 ? "Buzz" : ""}"
-	return result unless result.empty?
-	number
+	if number % 15 == 0
+		"FizzBuzz"
+	elsif number % 5 == 0
+		"Buzz"	
+	elsif number % 3 == 0
+		"Fizz"	
+	else
+		number
+	end	
 end
 
 # Tests
@@ -24,6 +30,6 @@ assert_equal fizzbuzz(15), "FizzBuzz"
 assert_equal fizzbuzz(5175), "FizzBuzz"
 
 # uncomment this code when your tests pass
-# 1.upto(100) do |number|
-#  puts fizzbuzz(number)
-# end
+1.upto(100) do |number|
+ puts fizzbuzz(number)
+end
